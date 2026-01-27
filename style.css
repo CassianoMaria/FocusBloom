@@ -1,0 +1,55 @@
+/*Reset básico*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #bcead5;
+  font-family: "Quicksand", sans-serif;
+  color: #4a4a4a;
+}
+
+.header-container { /* Flexbox para a .header-container.*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header { /*E o header fica só como “casca visual*/
+  background-color: #fff9f0;
+  padding: 0 32px; /* espaço interno nas laterais */
+
+  height: 50px; /* altura da barra do cabeçalho */
+  border-radius: 32px; /* bordas arredondadas */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 1200px; /* largura máxima */
+  margin: 20px auto; /*centralizar horizontalmente*/
+}
+
+h1, ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  
+  list-style: none; /* remove os marcadores da lista */
+  display: flex;
+  gap: 32px; /* espaço entre os itens */
+}
+
+nav ul li {
+  font-size: 16px; /* tamanho da fonte dos itens do menu */
+  font-weight: 500; /* peso da fonte / 500 -> peso médio (nem fino, nem muito grosso)*/
+  color: #4a4a4a;
+  cursor: pointer; /* mãozinha (indica que é clicável)*/
+}
+
+nav ul li:hover {
+  /* nesse caso o hover (interação) muda a cor do texto quando passamos o mause por cima */
+  color: #ffb6c1;
+  transition: color 0.3s; /* transição suave de cor em 0.3 segundos */
+}

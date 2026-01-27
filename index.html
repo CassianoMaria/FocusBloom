@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FOCUSBLOOM</title>
+    
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
@@ -20,21 +22,26 @@
       </div>
     </header>
     <main>
-       <section>
+      <section class="pomodoro">
         <h2>FOCUS TIME</h2>
         <p>25:00</p>
         <div class="buttons">
-            <button>Iniciar</button>
-            <button>Pausar</button>
-            <button>Continuar</button>
+          <button>Iniciar</button>
+          <button>Pausar</button>
+          <button>Continuar</button>
         </div>
-       </section> 
+        <div class="webcam">
+          <video src=""></video>
+        </div>
+      </section>
 
-       <section>
+      <section class="tasks">
         <h2>Tasks</h2>
-        <input type="text" placeholder="Matéria da sessão">
-        <button>Adicionar</button>
-       </section>
+        <div class="tasks-controls">
+          <input type="text" placeholder="Matéria da sessão" />
+          <button>Adicionar</button>
+        </div>
+      </section>
     </main>
   </body>
 </html>
