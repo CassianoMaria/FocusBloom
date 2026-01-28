@@ -26,6 +26,7 @@ body {
 header { /*E o header fica só como “casca visual*/
   background-color: #fbf7eb;
   padding: 0 32px; /* espaço interno nas laterais */
+  ;
 
   height: 50px; /* altura da barra do cabeçalho */
   border-radius: 40px; /* bordas arredondadas */
@@ -66,19 +67,24 @@ main {
   display: flex;
   gap: 48px; /*espaço entre pomodoro e tasks*/
 
-  background-color: #fff9f0;
-  padding: 40px;
-  border-radius: 24px;
-
   max-width: 900px;
   width: 100%;
 }
 
-.pomodoro .tasks { /*definindo largura para os dois cards*/
-  width: 300px;
-  min-height: 200px;
-  padding: 24px;
-}  
+.pomodoro, .tasks { /*definindo largura para os dois cards*/
+  width: 320px;
+  min-height: 300px;
+
+  background-color: #fff9f0;
+  border-radius: 32px; /*Bordas arredondadas*/
+
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
 
 .pomodoro {
   display: flex;
@@ -105,10 +111,36 @@ main {
   gap: 8px;
 }
 
-.pomodoro,
+.pomodoro {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 32px;
+}
 .tasks {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   padding: 32px;
 }
 
+.pomodoro p {
+  font-size: 64px; /* Tamanho da fonte do tempo do Pomodoro */
+  font-weight: bold; /* Negrito */
+  color: #6b8c75;
+
+  /* 2. O Formato (Quadrado -> Círculo) */
+  width: 250px; /* Largura fixa */
+  height: 250px; /* Altura fixa igual á largura */
+  border-radius: 50%; /* Bordas arredondadas para formar um círculo */
+
+  /* 3. A Borda (O anel colorido) */
+  border: 8px solid #e8c3c3; /* Borda grossa e rosada */
+  background-color: white; /* Fundo branco dentro do círculo para destacar o bege */
+
+  /* 4. Centralizando o texto DENTRO do círculo */
+  display: flex;
+  justify-content:  center; /* Alinha horizontalmente (esquerda/direita) */
+  align-items: center; /* Alinha verticalmente (topo/baixo) */
+
+  /* Um espaçamento extra para não grudar no título */
+  margin: 20px 0;
+}
