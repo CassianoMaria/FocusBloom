@@ -64,27 +64,27 @@ main {
 }  
 
 .dashboard {
-  display: flex;
-  gap: 48px; /*espaço entre pomodoro e tasks*/
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 32px; /* Espaço entre o Timer e as Tarefas */
 
-  max-width: 900px;
-  width: 100%;
+ max-width: 500px; /* Limitamos a largura para ficar parecendo um App de celular */
+ width: 100%;
+ margin: 0 auto; /* Garante que o bloco todo fique no meio da página */
 }
 
 .pomodoro, .tasks { /*definindo largura para os dois cards*/
-  width: 320px;
-  min-height: 300px;
-
+  width: 100%;
   background-color: #fff9f0;
-  border-radius: 32px; /*Bordas arredondadas*/
-
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
-
+  border-radius: 32px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px;
 }
+
 
 .pomodoro {
   display: flex;
@@ -143,4 +143,100 @@ main {
 
   /* Um espaçamento extra para não grudar no título */
   margin: 20px 0;
+}
+
+
+/* Estiliza TODOS os botoões dentro da div .buttons*/
+.buttons button {
+  /* 1- limpando o padrão feio do navegador */
+  border: none;  /* Tira a borda padrão do botão */
+  outline: none;  /* Tira a linha de foco padrão */
+
+  /* 2- Cores e textos */
+  background-color: #ffb6c1;
+  color: white;
+  font-size: 1rem; /* Tamanho da fonte do botão */
+  font-weight: bold; /* Texto gordinho */
+
+  /* 3- Formato de pílula */
+  padding: 12px 24px; /* Espaço interno: mais nas laterais, menos em cima/baixo */
+  border-radius: 50px; /* Bordas arredondadas */
+
+  /* 4- Interatividade */
+  cursor: pointer; /* Muda o cursor para a mãozinha */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve em baixo do botão*/
+
+  /* 5- Preparando animação*/
+  transition: transform 0.2s, box-shadow 0.2s; /* Animação suave para transformações e sombra */
+}
+
+/* O que acontece quando o mause passa por cima (hover)*/
+.buttons button:hover {
+  background-color: #ffa0b0;
+  transform: translateY(-2px); /* O botão sobe 2 pixels (efeito flutuar)*/
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* A sombra aumenta conforme ele sobe*/
+}
+
+/* O que acontece quando o mouse é clicado (active) */
+.buttons button:active {
+  transform: translateY(0); /* Volta para a posição original */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra diminui conforme o botão é pressionado */
+}
+
+/* --- Atualizando o visual do Input das Tarefas --- */
+.tasks-controls input {
+  flex: 1;
+  padding: 12px 20px;       /* Mais gordinho */
+  border-radius: 50px;      /* Bem redondo (pílula) */
+  border: 2px solid #e0e0e0; /* Borda cinza bem clara inicialmente */
+  background-color: #fcfcfc; /* Um branco quase cinza para diferenciar do fundo */
+  color: #555;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Quando clica, fica com a cor do tema, mas suave */
+.tasks-controls input:focus {
+  border-color: #ffb6c1; 
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 182, 193, 0.2); /* Um brilho rosa suave em volta */
+}
+
+/* --- Botão Adicionar mais "Pastel" --- */
+.tasks-controls button{
+  /* 1- Tamanho e estrututa */
+  height: 48px; /* Mesma altura do input */  
+  padding: 0 28px; /* Espaço interno nas laterais */
+  border: none; /* Tira a borda padrão do botão */
+  border-radius: 50px; /* Bordas arredondadas (pílula) */
+
+  /* 2- Cores e textos */
+  background-color: #8fb597;
+  color: #ffffff; /* Texto branco para leitura fácil */
+  font-size: 1rem; /* Tamanho do texto */ 
+  font-weight: 700; /* Texto gordinho */
+  letter-spacing: 0.5px; /* Um leve espaçamento entre as letras */ 
+  
+  /* 3- Comportamento */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animação suave para todas as mudanças */
+  box-shadow: 0 4px 10px rgba(143, 181, 151, 0.4); /* Sombra colorida suave */
+}
+
+.tasks-controls button:hover {
+  background-color: #7a9c82; /* Escurce levemente o verde */
+  transform: translateY(-2px); /* Levanta o botão levemente ao passar o mouse */
+  box-shadow: 0 6px 15px rgba(143, 181, 151, 0.4); /* Aumenta a sombra */
+}
+
+.tasks-controls button:active {
+  transform: translateY(1px); /* Abaixa o botão levemente ao clicar */
+  box-shadow: 0 2px 5px rgba(143, 181, 151, 0.4);
+}
+
+/* 1- Limpando a lista de tarefas */
+.tasks-list {
+  list-style: none;
+  width: 100%; /* Tira a bolinha padrão */
+  margin-top: 24px; /* Espaço entre o input e a lista */
 }
