@@ -240,3 +240,73 @@ main {
   width: 100%; /* Tira a bolinha padrão */
   margin-top: 24px; /* Espaço entre o input e a lista */
 }
+
+.tasks-list li {
+  background-color: white;
+  padding: 16px 20px; /* ESpaço interno confortável */
+  border-radius: 16px; /* Bordas arredondadas (menos que os botões para variar)*/
+
+  /* Layout do texto dentro do card */
+  display: flex;
+  justify-content: space-between; /* Prepara para quando tivermos um botão de deletar */
+  align-items: center;
+
+  /* Sombra e bordas*/
+  box-shadow: 0 4px 8px rgba(0,0,0, 0.03);
+  border-left: 6px solid #ffb6c1; /* Uma listra rosa a esquerda */
+
+  /* Texto */
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+
+  /* Espaço entre uma tarefa e outra*/
+  margin-bottom: 12px;
+
+  /* Animação */
+  transition: transform 0.2s;
+}
+
+/* 3- Efeito passar  mause na tarefa */
+.tasks-list li:hover{
+  transform: scale(1.02); /* A tarefa cresce um pouquinho */
+  cursor: default; /* O cursor continua normal*/
+}
+
+/* Webcam flutuante (picture-in-picture) */
+.webcam {
+  /* 1- onde ela fica */
+  position: fixed; /* cola na tela, ignora o resto do site  */
+  bottom: 20px; /* 20px de distancia do ródape */
+  right: 20px; /* 20px de distancia da direita */
+  z-index: 1000; /* Garante que fique em CIMA de tudo */ 
+
+  /* 2- tamanho */
+  width: 180px; /* Largura do cartão de visita */
+  height: 120px;
+
+  /* 3- visual */
+  background-color: #e8f5e9;
+  border: 3px solid #a8d5ba;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0, 0.15); /* Sombra para dar profundidade */
+
+  /* 4- comportamento interno */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transform: transform 0.3 ease; 
+}
+
+/* Aumenta um pouquinho quando passa o mouse */
+.webcam:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.webcam video{
+  width: 100%;
+  height: 100%;
+  display: none;
+}
