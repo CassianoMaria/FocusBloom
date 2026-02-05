@@ -6,11 +6,15 @@
     <title>FOCUSBLOOM</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./assets/img/favicon-32x32" sizes="32x32">
   </head>
   <body>
     <header>
       <div class="header-container">
-        <h1>FOCUSBLOOM</h1>
+        <h1 class="logo">
+          <img src="./assets/img/logo3.png" alt="Logo" class="logo-img">
+          <span class="text-focus">FOCUS</span> <span class="text-bloom">BLOOM</span>
+        </h1>
         <nav>
           <ul>
             <li>Home</li>
@@ -25,11 +29,11 @@
       <div class="dashboard">
         <section class="pomodoro">
           <h2>FOCUS TIME</h2>
-          <p>25:00</p>
+          <p id="timer">25:00</p>
           <div class="buttons">
-            <button>Iniciar</button>
-            <button>Pausar</button>
-            <button>Continuar</button>
+            <button id="bnt-iniciar">Iniciar</button>
+            <button id="bnt-pausar">Pausar</button>
+            <button id="bnt-continuar">Continuar</button>
           </div>
         </section>
 
@@ -47,5 +51,6 @@
           </div>
 
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
