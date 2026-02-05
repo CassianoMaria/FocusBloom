@@ -302,7 +302,7 @@ main {
 /* Aumenta um pouquinho quando passa o mouse */
 .webcam:hover {
   transform: scale(1.05);
-  cursor: pointer;
+  cursor: ;
 }
 
 .webcam video{
